@@ -73,6 +73,12 @@ ayame のサンプルスクリプトで確認する場合
 ```
 (LEDが点滅するスクリプト)
 $ python ~/ayame/led/lighting.py
+(無限ループで動き続けるので control + c で強制終了)
+```
+
+```
+(LEDが点灯するスクリプトだが一瞬すぎて確認ができない)
+$ python ~/ayame/led/lighting.py
 ```
 
 __うまく点灯できない場合__
