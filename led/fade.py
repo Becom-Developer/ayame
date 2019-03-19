@@ -13,7 +13,7 @@ try:
         for dc in range(0, 100, 5):
             pwm_led.ChangeDutyCycle(dc)
             time.sleep(0.05)
-        for dc in range(0, 100, -5):
+        for dc in range(100, 0, -5):
             pwm_led.ChangeDutyCycle(dc)
             time.sleep(0.05)
 finally:
