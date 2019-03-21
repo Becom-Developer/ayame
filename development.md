@@ -72,7 +72,7 @@ ayame のサンプルスクリプトで確認する場合
 
 ```
 (LEDが点滅するスクリプト)
-$ python ~/ayame/led/lighting.py
+$ python ~/ayame/led/blink.py
 (無限ループで動き続けるので control + c で強制終了)
 ```
 
@@ -94,7 +94,17 @@ LEDを使った様々なスクリプト
 
 パルス幅変調 (PWM) を使って明るさを調整
 
+```
+(LEDがの明るさを0~100で入力して点灯)
+$ python ~/ayame/led/brightness.py
+(無限ループで動き続けるので control + c で強制終了)
+```
 
+```
+(LEDが少しづつ明るくなって暗くなる)
+$ python ~/ayame/led/fade.py
+(無限ループで動き続けるので control + c で強制終了)
+```
 
 # SEE ALSO
 

@@ -190,7 +190,7 @@ github から ラズパイへ git clone
 
 ```
 (ソースコードを展開する場所へ移動)
-$ cd ~/ドキュメント/
+$ cd ~/
 
 (git を展開、このリポジトリは pull しかできない)
 $ git clone git@github.com:Becom-Developer/ayame.git
