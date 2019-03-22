@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 
+# LED を任意の明るさで点灯
 led_pin = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(led_pin, GPIO.OUT)

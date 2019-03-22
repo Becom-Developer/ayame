@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
+# LED を少しづつ明るくして暗くする
 led_pin = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(led_pin, GPIO.OUT)

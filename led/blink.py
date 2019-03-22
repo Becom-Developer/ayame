@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
+# LED の点灯と消灯を繰り返す
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 

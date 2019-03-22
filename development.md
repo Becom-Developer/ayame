@@ -70,15 +70,18 @@ $ python
 
 ayame のサンプルスクリプトで確認する場合
 
+__blink.py - LED の点灯と消灯を繰り返す__
+
 ```
-(LEDが点滅するスクリプト)
 $ python ~/ayame/led/blink.py
 (無限ループで動き続けるので control + c で強制終了)
 ```
 
+__lighting.py - LED を一瞬だけ点灯__
+
 ```
-(LEDが点灯するスクリプトだが一瞬すぎて確認ができない)
 $ python ~/ayame/led/lighting.py
+(LEDが点灯するスクリプトだが一瞬すぎて確認ができない)
 ```
 
 __うまく点灯できない場合__
@@ -94,15 +97,19 @@ LEDを使った様々なスクリプト
 
 パルス幅変調 (PWM) を使って明るさを調整
 
+__brighness.py - LED を任意の明るさで点灯__
+
 ```
-(LEDがの明るさを0~100で入力して点灯)
 $ python ~/ayame/led/brightness.py
+(LEDがの明るさを0~100で入力して点灯)
 (無限ループで動き続けるので control + c で強制終了)
 ```
 
+__fade.py - LED を少しづつ明るくして暗くする__
+
 ```
-(LEDが少しづつ明るくなって暗くなる)
 $ python ~/ayame/led/fade.py
+(LEDが少しづつ明るくなって暗くなる)
 (無限ループで動き続けるので control + c で強制終了)
 ```
 
