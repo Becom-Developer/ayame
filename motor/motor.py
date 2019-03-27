@@ -16,4 +16,4 @@ try:
         time.sleep(2)
 finally:
     print("Cleaning Up!")
-    pi.cleanup()
+    pi.serialClose(motor_pin)
