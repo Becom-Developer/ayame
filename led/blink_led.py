@@ -14,7 +14,7 @@ while True:
 
     pi.digitalWrite(led_pin, pi.HIGH)
     time.sleep(1)
-finally:
-    print("Cleaning Up!")
-    GPIO.cleanup()
+# finally:
+#     print("Cleaning Up!")
+#     GPIO.cleanup()
 
