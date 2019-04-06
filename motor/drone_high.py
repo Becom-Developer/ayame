@@ -29,7 +29,7 @@ pi.softPwmWrite( back_r, 0 )
 
 try:
     while True:
-        speed = 90
+        speed = 50
         pi.softPwmWrite(front_l, speed)
         pi.softPwmWrite(front_r, speed)
         pi.softPwmWrite(back_l, speed)
