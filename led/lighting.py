@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import RPi.GPIO as GPIO
 
 # LED を一瞬だけ点灯
