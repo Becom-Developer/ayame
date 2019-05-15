@@ -14,6 +14,13 @@ system - 開発環境の設定の仕方について
 - 遠隔操作については完璧ではないことに注意する
     - 「Raspberry Piクックブック」の2章が参考になる
     - [SEE ALSO](#see-also) の「Raspberry Piクックブック 第2版」
+- ラズパイに設定するパスワードなどについては事前になににするのか決めておく
+    - 例:
+    - host: raspberrypi
+    - user: pi
+    - pass: ****
+- Python について
+    - 基本的には Python3 を活用する
 
 ## RASPBIAN
 
@@ -71,6 +78,18 @@ $ ifconfig
 
 __IPアドレスを固定するやり方__
 
+なぜIPアドレスを固定するのか
+
+```
+お手元のPCからラズパイへリモートアクセスしたい場合、別途 ssh や vnc
+などのアプリからアクセスをすることのなるが、その時のアクセス先を指定するのに
+IPアドレスを指定しなくてはいけない、ローカルホスト内においてルーターで自動的に
+IPアドレスが振り当てられることがおおいので、毎回アクセス中のIPアドレスを
+調べる手間を省くために固定にするやり方が取られることがよくある
+代替え案として、ホストネームを使ってアクセスするやり方もあるので、
+IPアドレスを固定することは必須ではない
+```
+
 - ラズパイが接続している無線LANルーターのIPアドレスを調べる
     - ちなみにこのドキュメント作成時は 192.168.1.1 とでる
 
@@ -125,7 +144,7 @@ __ソースコードを配置する__
 
 下記の場所をラズパイを制御するスクリプト置き場としたい
 
-`/home/pi/ドキュメント`
+`/home/pi`
 
 github を活用する
 
@@ -164,7 +183,7 @@ Github に公開鍵を登録
     - ayame リボジトリが見れない場合は権限をもらう
 - ayame リポジトリ
     - Settings -> Deploy keys -> Add deploy key(クリック)
-    - Title -> raspberry (もし使われていたら別の名前) 
+    - Title -> raspberry (もし使われていたら別の名前)
     - key -> 公開鍵の内容をコピペする
 
 ラズパイから通信確認
@@ -186,6 +205,17 @@ Hi Becom-Developer/ayame! You've successfully authenticated, but GitHub does not
 (Github と接続ができたメッセージ)
 ```
 
+__githubとうまく通信できない場合__
+
+```
+ssh: Could not resolve hostname github.com: Temporary failure in name resolution
+```
+
+```
+このようなエラーが出てうまく通信できない場合はIPを固定したことによるものかもしれない
+いちど固定IPの設定を外して再起動後、しばらくしてから通信してみる
+```
+
 github から ラズパイへ git clone
 
 ```
@@ -194,6 +224,56 @@ $ cd ~/
 
 (git を展開、このリポジトリは pull しかできない)
 $ git clone git@github.com:Becom-Developer/ayame.git
+```
+
+__Python の確認__
+
+- python 自体や pip コマンドが何であるのかがわからない人は基本的な学習をしておく
+    - [SEE ALSO](#see-also) の「Python Boot Camp」参考
+
+```
+(実行コマンドを調べる)
+$ which python
+/usr/bin/python
+(実行コマンドを調べる python3)
+$ which python3
+/usr/bin/python3
+
+(使っているバージョンを調べる)
+$ python --version
+Python 2.7.13
+$ python3 --version
+Python 3.5.3
+
+(追加でインストールされたライブラリは pip コマンドで管理)
+
+(pip コマンドはいろんな指定がある)
+$ pip3 --version
+pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.5)
+$ pip2 --version
+pip 9.0.1 from /usr/lib/python2.7/dist-packages (python 2.7)
+$ pip --version
+pip 9.0.1 from /usr/lib/python2.7/dist-packages (python 2.7)
+
+(インストールすみのライブラリ)
+$ pip3 list --format columns
+...
+RPi.GPIO          0.6.5
+...
+
+(GPIO はすでに入っている)
+
+(WiringPi というライブラリを類似のものも含めて検索)
+$ pip3 search wiringpi
+wiringpi (2.46.0)   - A python interface ...
+wiringpi2 (2.32.3)  - A python interface ...
+
+(WiringPi インストール)
+$ pip3 install wiringpi
+
+(ayame のサンプルコードを実行してみる)
+$ python3 ~/ayame/welcom.py
+Welcome ayame!!
 ```
 
 ## MAC
@@ -213,7 +293,7 @@ $ slogin pi@192.168.1.129
 Are you sure you want to continue connecting (yes/no)?
 
 (パスワード入力)
-pi@192.168.1.129's password: 
+pi@192.168.1.129's password:
 ...
 (ログインできた)
 Last login: Sun Mar 17 13:22:28 2019 from 192.168.1.114
@@ -228,6 +308,13 @@ $
 $ ssh 192.168.1.129 -l pi
 
 (control + c のショートカットでもログアウトできる)
+```
+
+ホスト名をつかってアクセスするやり方もある
+
+```
+(最後に .local をつけるところに注意)
+$ ssh pi@raspberrypi.local
 ```
 
 __VNC による接続__
@@ -249,5 +336,6 @@ VNC による接続は全体的に動作が重く、画面の解像度の問題�
 - <https://www.oreilly.co.jp/books/9784873118116/> - Raspberry Piクックブック 第2版
 - <https://www.realvnc.com/en/connect/download/viewer/> - vnc viewer ダウンロード
 - <https://github.com/Becom-Developer> - Becom github
+- <http://pycamp.pycon.jp/index.html> - Python Boot Camp
 
 
