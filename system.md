@@ -330,6 +330,20 @@ VNC による接続は全体的に動作が重く、画面の解像度の問題�
 
 ## WINDOWS
 
+## BACKUP
+
+__SDカードは書き込み回数の上限や劣化による寿命があり、エラーが出て起動しなくなる可能性があるため、バックアップを作成__
+
+下記のようにラズパイのOSにはバックアップの機能があるが、とても時間がかかるので注意
+
+- 事前に市販のUSB接続の外付けSDカードリーダーを用意
+- バックアップ先のSDカードはコピー元と同じ記憶容量かそれ以上のものを用意
+- 左上のラズパイマーク -> アクセサリ -> SD Card Copier
+    - Copy From Deveice: (コピーする元のSDカード選択 /dev/... のようなもの)
+    - Copy To Deveice: (コピーする先のSDカード選択)
+    - New Partition UUIDs: チェックする
+    - Start ボタンを押した後、確認のアラートが出るがOKを実行
+
 # SEE ALSO
 
 - <https://www.oreilly.co.jp/books/9784873118314/> - Raspberry Pi を始めよう 第3版
@@ -337,5 +351,3 @@ VNC による接続は全体的に動作が重く、画面の解像度の問題�
 - <https://www.realvnc.com/en/connect/download/viewer/> - vnc viewer ダウンロード
 - <https://github.com/Becom-Developer> - Becom github
 - <http://pycamp.pycon.jp/index.html> - Python Boot Camp
-
-
