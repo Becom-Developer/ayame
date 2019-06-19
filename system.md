@@ -317,6 +317,21 @@ $ ssh 192.168.1.129 -l pi
 $ ssh pi@raspberrypi.local
 ```
 
+ayame のサンプルコードを動かす場合
+
+```
+$ python3 ~/ayame/welcom.py
+Welcome ayame!!
+
+(LED の点灯と消灯を繰り返す、led 配下はled用のサンプルスクリプト)
+$ python3 ~/ayame/led/blink.py
+(無限ループで動き続けるので control + c で強制終了)
+
+(モーターを一個づつ回転させる motor 配下はドローンモーター用のサンプルスクリプト)
+$ python3 ~/ayame/motor/drone.py
+(無限ループで動き続けるので control + c で強制終了)
+```
+
 __VNC による接続__
 
 VNC による接続は全体的に動作が重く、画面の解像度の問題やコピペがうまくできないなどの問題がある
