@@ -359,6 +359,78 @@ __SDカードは書き込み回数の上限や劣化による寿命があり、�
     - New Partition UUIDs: チェックする
     - Start ボタンを押した後、確認のアラートが出るがOKを実行
 
+# COMMAND
+
+__ラズパイを動かすサンプルスクリプトの説明__
+
+サンプルスクリプトの詳細は下記のディレクトリを参考
+
+- __ドローンのモーター関係のスクリプト__
+- https://github.com/Becom-Developer/ayame/tree/master/motor
+
+- __ドローンのモーター関係のスクリプト__
+- https://github.com/Becom-Developer/ayame/tree/master/led
+
+__起動確認__
+
+```
+(python3 が実行できるか確認のスクリプト)
+$ python3 ~/ayame/welcom.py
+```
+
+__ドローンのモーター関係のスクリプト__
+
+```
+(モーターをフル回転で一個づつ回転させる)
+$ python3 ~/ayame/motor/drone.py
+
+(モーターを20%出力で一個づつ回転させる)
+$ python3 ~/ayame/motor/drone_2.py
+
+(モーターをフル回転で全部同時に回転、2秒間停止)
+$ python3 ~/ayame/motor/drone_full.py
+
+(モーターをフル回転で全部同時にしばらく回転、2秒間停止)
+$ python3 ~/ayame/motor/drone_full2.py
+
+(モーターを50%出力で全部同時に回転、2秒間停止)
+$ python3 ~/ayame/motor/drone_high.py
+
+(モーターを20%出力で全部同時に回転、2秒間停止)
+$ python3 ~/ayame/motor/drone_idling.py
+
+(モーターをフル回転で一個だけ回転させる)
+$ python3 ~/ayame/motor/motor.py
+
+(モーターをフル回転で一個だけ回転させる、コードの書き方が違う)
+$ python3 ~/ayame/motor/motor_gpio.py
+
+(モーターの回転数を少しづつあげていく、一個だけ)
+$ python3 ~/ayame/motor/pwm_motor.py
+
+(モーターの回転数を少しづつあげていく、全てのモーター)
+$ python3 ~/ayame/motor/pwm_motor2.py
+```
+
+__LED の明かりを調節するスクリプト__
+
+```
+(LED の点灯と消灯を繰り返す)
+$ python3 ~/ayame/led/blink.py
+
+(LED の点灯と消灯を繰り返す、コードの書き方が違う)
+$ python3 ~/ayame/led/blink_led.py
+
+(LED を任意の明るさで点灯、実行後、数字を入力する)
+$ python3 ~/ayame/led/brightness.py
+
+(LED を少しづつ明るくして暗くする)
+$ python3 ~/ayame/led/fade.py
+
+(LED を一瞬だけ点灯、一瞬すぎてほとんどわからない)
+$ python3 ~/ayame/led/lighting.py
+```
+
 # SEE ALSO
 
 - <https://www.oreilly.co.jp/books/9784873118314/> - Raspberry Pi を始めよう 第3版
