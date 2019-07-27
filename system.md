@@ -367,7 +367,6 @@ __ラズパイを動かすサンプルスクリプトの説明__
 
 - __ドローンのモーター関係のスクリプト__
 - https://github.com/Becom-Developer/ayame/tree/master/motor
-
 - __ドローンのモーター関係のスクリプト__
 - https://github.com/Becom-Developer/ayame/tree/master/led
 
